@@ -14,10 +14,10 @@ const services = [
 ];
 
 const steps = [
-  { number: "01", title: "Você entra em contato", text: "Conte o que sua família precisa, o período e o tipo de acompanhamento desejado." },
-  { number: "02", title: "Entendemos a rotina", text: "Conversamos sobre a criança, os cuidados necessários e como podemos ajudar." },
-  { number: "03", title: "Definimos o atendimento", text: "Combinamos data, horário, duração e todos os detalhes do acompanhamento." },
-  { number: "04", title: "Cuidado no seu lar", text: "Um técnico de enfermagem com experiência realiza o acompanhamento combinado." },
+  { number: "1", title: "Conte o que precisa", text: "Fale pelo WhatsApp sobre a criança, o período e o tipo de apoio que sua família procura." },
+  { number: "2", title: "Alinhamos os detalhes", text: "Entendemos a rotina, os cuidados necessários, data, horário e duração do atendimento." },
+  { number: "3", title: "Confirmamos o atendimento", text: "Tudo fica combinado com clareza antes do profissional se deslocar até sua casa." },
+  { number: "4", title: "Cuidado no seu lar", text: "O acompanhamento acontece no ambiente familiar, com presença e atenção." },
 ];
 
 const testimonials = [
@@ -43,13 +43,11 @@ const faqs = [
 ];
 
 function Index() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
 
   const goTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setMobileOpen(false);
   };
 
   return (
@@ -69,15 +67,20 @@ function Index() {
               <span><CircleCheck size={17} /> Atendimento domiciliar</span><span><CircleCheck size={17} /> Profissional experiente</span><span><CircleCheck size={17} /> Cuidado humanizado</span>
             </div>
           </div>
-          <div className="hero-identity">
-            <div className="hero-logo-wordmark"><strong>Anjel</strong><span>Cuidados</span></div>
-            <div className="hero-location"><MapPin size={16} /> Atendimento domiciliar em Teresina-PI</div>
-            <div className="hero-identity-card"><Heart size={22} fill="currentColor" /><div><strong>Cuidado que acolhe</strong><small>Presença e segurança para sua família</small></div></div>
-          </div>
+
         </div>
       </section>
 
       <section className="marquee-section" aria-label="Serviços e diferenciais"><div className="marquee-track">{["Recém-nascido", "Crianças até 6 anos", "Pós-parto", "Amamentação", "Pós-operatório", "Viagens", "Acompanhamento domiciliar", "Recém-nascido"].map((item, index) => <span key={`${item}-${index}`}><Heart size={14} fill="currentColor" /> {item}</span>)}</div></section>
+
+      <section className="section pain-section">
+        <div className="container centered-story">
+          <div className="pain-copy centered-copy"><div className="section-kicker">APOIO PARA A VIDA REAL</div><h2>Quando você precisa sair, <span>o cuidado continua.</span></h2><p>A rotina nem sempre permite que os pais estejam em todos os momentos. A Anjel Cuidados oferece apoio profissional no conforto da sua casa, para que você possa cumprir seus compromissos com mais tranquilidade.</p>
+          <div className="check-list centered-check-list">{["Precisa sair e quer manter seu pequeno em casa?","Tem uma reunião, casamento ou viagem programada?","Está no pós-parto e precisa de apoio na rotina?","Quer contar com um profissional de enfermagem em casa?"].map((item)=><div key={item}><span><Check size={15}/></span>{item}</div>)}</div>
+          <a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Conhecer o atendimento</a></div>
+        </div>
+      </section>
+
 
       <section className="section soft-section" id="servicos">
         <div className="container">
@@ -91,21 +94,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="section pain-section">
-        <div className="container centered-story">
-          <div className="pain-copy centered-copy"><div className="section-kicker">APOIO PARA A VIDA REAL</div><h2>Você ama estar presente. <span>Mas nem sempre consegue estar.</span></h2><p>Tem dias em que você precisa trabalhar, resolver algo, viajar, participar de uma reunião ou simplesmente ter um momento para você. E isso não diminui o seu cuidado com seu filho.</p>
-          <div className="check-list centered-check-list">{["Precisa sair e não quer deixar seu bebê com qualquer pessoa?","Vai viajar ou participar de um compromisso importante?","Está no pós-parto e precisa de apoio com a rotina do bebê?","Quer ter suporte profissional dentro da sua própria casa?"].map((item)=><div key={item}><span><Check size={15}/></span>{item}</div>)}</div>
-          <a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Conversar com a Anjel</a></div>
-        </div>
-      </section>
-
-      <section className="section info-section" id="como-funciona">
-        <div className="container">
-          <div className="section-heading center-heading"><div className="section-kicker">COMO FUNCIONA</div><h2>Seu cuidado começa com uma conversa.</h2><p>Do primeiro contato ao atendimento, tudo é combinado com clareza e atenção.</p></div>
-          <div className="steps-grid">{steps.map((step) => <div className="step-card" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div>
-          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18} /> Agendar atendimento</a></div>
-        </div>
-      </section>
 
       <section className="section feature-carousel-section">
         <div className="container">
@@ -118,6 +106,16 @@ function Index() {
           <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18}/> Agendar atendimento</a></div>
         </div>
       </section>
+
+
+      <section className="section info-section" id="como-funciona">
+        <div className="container">
+          <div className="section-heading center-heading"><div className="section-kicker">COMO FUNCIONA</div><h2>Um atendimento pensado para a sua rotina.</h2><p>Você conta o que precisa, a equipe entende a rotina e combina cada detalhe antes do atendimento.</p></div>
+          <div className="steps-grid">{steps.map((step) => <div className="step-card" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18} /> Agendar atendimento</a></div>
+        </div>
+      </section>
+
 
       <section className="section packages-section">
         <div className="container">
@@ -134,11 +132,13 @@ function Index() {
         </div>
       </section>
 
+
       <section className="section about-section" id="sobre">
         <div className="container centered-about">
           <div className="about-copy centered-copy"><div className="section-kicker">QUEM SOMOS</div><h2>Anjel Cuidados: <span>presença que faz bem.</span></h2><p>A Anjel Cuidados nasceu para apoiar famílias que precisam de uma pessoa de confiança ao lado de seus pequenos em momentos da rotina em que não conseguem estar presentes.</p><p>Nosso atendimento é domiciliar, em Teresina-PI, com profissionais da área de enfermagem com experiência e uma proposta centrada em cuidado, responsabilidade e acolhimento.</p><div className="about-points centered-about-points"><div><HeartHandshake/><span><strong>Humanização</strong><small>Respeito à rotina e à individualidade da família.</small></span></div><div><ShieldCheck/><span><strong>Responsabilidade</strong><small>Atendimento com atenção aos limites e necessidades combinados.</small></span></div><div><Home/><span><strong>Conforto</strong><small>O cuidado acontece onde a criança se sente em casa.</small></span></div></div><div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Agendar atendimento</a></div></div>
         </div>
       </section>
+
 
       <section className="section testimonials-section">
         <div className="container">
@@ -152,6 +152,7 @@ function Index() {
           <p className="testimonial-note">Depoimentos ilustrativos para a estrutura do site. Substitua pelos depoimentos reais das famílias atendidas antes da publicação.</p>
         </div>
       </section>
+
 
       <section className="section faq-section" id="duvidas">
         <div className="container faq-grid"><div><div className="section-kicker">DÚVIDAS FREQUENTES</div><h2>Antes de chamar, <span>talvez sua dúvida já esteja aqui.</span></h2><p>Se não encontrar a resposta, fale diretamente com a Anjel pelo WhatsApp.</p><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Falar com a equipe</a></div><div className="faq-list">{faqs.map((faq, index) => <div className={`faq-item ${openFaq === index ? "open" : ""}`} key={faq.q}><button onClick={() => setOpenFaq(openFaq === index ? null : index)}><span>{faq.q}</span><ChevronDown size={19} /></button>{openFaq === index && <p>{faq.a}</p>}</div>)}</div></div>
