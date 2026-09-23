@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound } from "lucide-react";
 import { useState } from "react";
+import clinicAsset from "../assets/clinica-anjel.jpg.asset.json";
+import logoAsset from "../assets/logo-anjel.png.asset.json";
+import whatsappAsset from "../assets/whatsapp.png.asset.json";
 
 const WHATSAPP = "https://wa.me/558681932631?text=Ol%C3%A1%20Anjel%20Cuidados!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20domiciliar.";
 
@@ -56,6 +59,7 @@ function Index() {
         <div className="hero-blur hero-blur-one" /><div className="hero-blur hero-blur-two" />
         <div className="container hero-grid">
           <div className="hero-copy">
+            <img className="hero-brand-logo" src={logoAsset.url} alt="Anjel Cuidados" />
             <div className="eyebrow"><Sparkles size={15} /> Cuidado domiciliar em Teresina-PI</div>
             <h1>Seu filho cuidado com carinho, <em>mesmo quando você precisa sair.</em></h1>
             <p className="hero-subtitle">A Anjel Cuidados leva até sua casa um técnico de enfermagem com experiência para acompanhar recém-nascidos e crianças de 0 a 6 anos.</p>
@@ -134,7 +138,8 @@ function Index() {
 
 
       <section className="section about-section" id="sobre">
-        <div className="container centered-about">
+        <div className="container about-clinic-grid">
+          <figure className="clinic-photo"><img src={clinicAsset.url} alt="Sala de atendimento da Anjel Cuidados" /><figcaption><Home size={16}/> Ambiente acolhedor em Teresina</figcaption></figure>
           <div className="about-copy centered-copy"><div className="section-kicker">QUEM SOMOS</div><h2>Anjel Cuidados: <span>presença que faz bem.</span></h2><p>A Anjel Cuidados nasceu para apoiar famílias que precisam de uma pessoa de confiança ao lado de seus pequenos em momentos da rotina em que não conseguem estar presentes.</p><p>Nosso atendimento é domiciliar, em Teresina-PI, com profissionais da área de enfermagem com experiência e uma proposta centrada em cuidado, responsabilidade e acolhimento.</p><div className="about-points centered-about-points"><div><HeartHandshake/><span><strong>Humanização</strong><small>Respeito à rotina e à individualidade da família.</small></span></div><div><ShieldCheck/><span><strong>Responsabilidade</strong><small>Atendimento com atenção aos limites e necessidades combinados.</small></span></div><div><Home/><span><strong>Conforto</strong><small>O cuidado acontece onde a criança se sente em casa.</small></span></div></div><div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Agendar atendimento</a></div></div>
         </div>
       </section>
@@ -162,7 +167,7 @@ function Index() {
 
       <footer className="site-footer"><div className="container footer-grid"><div><div className="brand footer-brand"><span className="brand-mark"><Heart size={18} fill="currentColor" /></span><span><strong>Anjel</strong><small>Cuidados</small></span></div><p>Cuidado que acolhe. Presença que faz bem.</p></div><div><h4>Atendimento</h4><span><MapPin size={15} /> Teresina • Piauí</span><a href={WHATSAPP} target="_blank" rel="noreferrer"><Phone size={15} /> (86) 98193-2631</a></div><div><h4>Conecte-se</h4><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={16} /> Instagram</a><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Anjel Cuidados. Todos os direitos reservados.</span><span>Atendimento humanizado e profissional.</span></div></footer>
 
-      <a className="floating-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a Anjel Cuidados pelo WhatsApp"><MessageCircle size={27} /></a>
+      <a className="floating-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a Anjel Cuidados pelo WhatsApp"><img src={whatsappAsset.url} alt="" /></a>
     </main>
   );
 }
@@ -175,6 +180,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Anjel Cuidados | Cuidado que acolhe" },
       { property: "og:description", content: "Acompanhamento domiciliar para sua família em Teresina-PI." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
