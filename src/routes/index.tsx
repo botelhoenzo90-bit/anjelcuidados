@@ -52,6 +52,9 @@ function Index() {
     return () => window.clearInterval(timer);
   }, []);
 
+  const activeInfo = infoSlides[infoIndex];
+  if (!activeInfo) return null;
+
   const goTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
@@ -142,7 +145,7 @@ function Index() {
       <section className="section feature-carousel-section">
         <div className="container feature-panel">
           <div className="feature-copy"><div className="section-kicker">POR QUE TER APOIO?</div><h2>Mais tranquilidade para você. <span>Mais acolhimento para quem você ama.</span></h2><p>O atendimento domiciliar foi pensado para preservar a rotina da criança e oferecer à família uma rede de apoio quando ela mais precisa.</p><div className="feature-bullets"><span><UserRoundCheck size={17} /> Profissional com experiência</span><span><Home size={17} /> Atendimento no ambiente familiar</span><span><HeartHandshake size={17} /> Olhar humano e individualizado</span></div><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18} /> Agendar atendimento</a></div>
-          <div className="feature-slider"><div className="feature-slide">{(() => { const Icon = infoSlides[infoIndex].icon; return <div className="feature-icon"><Icon size={32} /></div>; })()}<span className="slide-count">0{infoIndex + 1} / 0{infoSlides.length}</span><h3>{infoSlides[infoIndex].title}</h3><p>{infoSlides[infoIndex].text}</p><div className="feature-controls"><button onClick={() => setInfoIndex((current) => (current - 1 + infoSlides.length) % infoSlides.length)} aria-label="Anterior"><ChevronLeft /></button><button onClick={() => setInfoIndex((current) => (current + 1) % infoSlides.length)} aria-label="Próximo"><ChevronRight /></button></div></div></div>
+          <div className="feature-slider"><div className="feature-slide">{(() => { const Icon = activeInfo.icon; return <div className="feature-icon"><Icon size={32} /></div>; })()}<span className="slide-count">0{infoIndex + 1} / 0{infoSlides.length}</span><h3>{activeInfo.title}</h3><p>{activeInfo.text}</p><div className="feature-controls"><button onClick={() => setInfoIndex((current) => (current - 1 + infoSlides.length) % infoSlides.length)} aria-label="Anterior"><ChevronLeft /></button><button onClick={() => setInfoIndex((current) => (current + 1) % infoSlides.length)} aria-label="Próximo"><ChevronRight /></button></div></div></div>
         </div>
       </section>
 
