@@ -179,16 +179,21 @@ function Index() {
 
 
       <section className="section about-section" id="sobre">
-        <div className="container about-clinic-layout">
+        <div className="container about-intro-layout">
           <div className="about-copy centered-copy"><div className="section-kicker">QUEM SOMOS</div><h2>Anjel Cuidados: <span>presença que faz bem.</span></h2><p>A Anjel Cuidados nasceu para apoiar famílias que precisam de uma pessoa de confiança ao lado de seus pequenos em momentos da rotina em que não conseguem estar presentes.</p><p>Nosso atendimento é domiciliar, em Teresina-PI, com profissionais da área de enfermagem com experiência e uma proposta centrada em cuidado, responsabilidade e acolhimento.</p></div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Conhecer a Anjel</a></div>
+        </div>
+      </section>
+
+      <section className="section clinic-space-section" id="espaco">
+        <div className="container clinic-space-layout">
           <div className="clinic-gallery-heading"><span>CONHEÇA O NOSSO ESPAÇO</span><h3>Ambientes preparados para acolher e cuidar.</h3><p>Conheça as salas da Anjel Cuidados, pensadas para diferentes profissionais e para o atendimento infantil.</p></div>
           <div className="clinic-gallery" aria-label="Fotos das salas da Anjel Cuidados">
             <div className="clinic-gallery-track">
               {[...clinicPhotos, ...clinicPhotos].map((photo, index) => <figure className="clinic-gallery-card" key={`${photo.src}-${index}`}><img src={photo.src} alt={index < clinicPhotos.length ? photo.alt : ""} loading={index > 2 ? "lazy" : "eager"} /></figure>)}
             </div>
           </div>
-          <div className="about-points centered-about-points"><div><HeartHandshake/><span><strong>Humanização</strong><small>Respeito à rotina e à individualidade da família.</small></span></div><div><ShieldCheck/><span><strong>Responsabilidade</strong><small>Atendimento com atenção aos limites e necessidades combinados.</small></span></div><div><Home/><span><strong>Conforto</strong><small>Ambientes acolhedores para cada atendimento.</small></span></div></div>
-          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Agendar atendimento</a></div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18}/> Agendar neste espaço</a></div>
         </div>
       </section>
 
