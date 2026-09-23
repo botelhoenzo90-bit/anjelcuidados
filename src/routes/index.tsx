@@ -1,7 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, MessageCircle, Phone, Play, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound } from "lucide-react";
 import { useState } from "react";
-import clinicAsset from "../assets/clinica-anjel.jpg.asset.json";
+import roomOneCoverAsset from "../assets/Sala_01_page-0001.jpg.asset.json";
+import roomOneSideAsset from "../assets/Sala_01_page-0002.jpg.asset.json";
+import roomOneTableAsset from "../assets/Sala_01_page-0003.jpg.asset.json";
+import roomOneWideAsset from "../assets/Sala_01_page-0004-2.jpg.asset.json";
+import roomTwoCoverAsset from "../assets/Sala_02_2_1_page-0001.jpg.asset.json";
+import roomTwoPlayAsset from "../assets/Sala_02_2_1_page-0002.jpg.asset.json";
+import roomTwoDeskAsset from "../assets/Sala_02_2_1_page-0003.jpg.asset.json";
+import roomTwoToysAsset from "../assets/Sala_02_2_1_page-0004.jpg.asset.json";
 import logoAsset from "../assets/logo-anjel.png.asset.json";
 import whatsappAsset from "../assets/whatsapp.png.asset.json";
 
@@ -34,6 +41,17 @@ const infoSlides = [
   { title: "Apoio para momentos especiais", text: "Reunião, casamento, compromisso profissional ou viagem: conte com suporte para cuidar do seu pequeno enquanto você resolve o que precisa.", icon: CalendarCheck2 },
   { title: "Primeiros cuidados com o RN", text: "O começo pode trazer muitas dúvidas. O acompanhamento ajuda a família a atravessar essa fase com mais organização e acolhimento.", icon: BabyIcon },
   { title: "Cuidado que respeita a família", text: "Cada atendimento é combinado de acordo com a rotina e as necessidades apresentadas pela família.", icon: HeartHandshake },
+];
+
+const clinicPhotos = [
+  { src: roomOneCoverAsset.url, alt: "Apresentação da Sala 01 da clínica", label: "Sala 01" },
+  { src: roomOneSideAsset.url, alt: "Área de atendimento da Sala 01", label: "Sala 01" },
+  { src: roomOneTableAsset.url, alt: "Maca e mesa de atendimento da Sala 01", label: "Sala 01" },
+  { src: roomOneWideAsset.url, alt: "Visão ampla da Sala 01", label: "Sala 01" },
+  { src: roomTwoCoverAsset.url, alt: "Apresentação da Sala 02 infantil", label: "Sala 02" },
+  { src: roomTwoPlayAsset.url, alt: "Mesa infantil da Sala 02", label: "Sala 02" },
+  { src: roomTwoDeskAsset.url, alt: "Mesa de atendimento da Sala 02", label: "Sala 02" },
+  { src: roomTwoToysAsset.url, alt: "Espaço lúdico da Sala 02", label: "Sala 02" },
 ];
 
 const faqs = [
@@ -161,9 +179,16 @@ function Index() {
 
 
       <section className="section about-section" id="sobre">
-        <div className="container about-clinic-grid">
-          <figure className="clinic-photo"><img src={clinicAsset.url} alt="Sala de atendimento da Anjel Cuidados" /><figcaption><Home size={16}/> Ambiente acolhedor em Teresina</figcaption></figure>
-          <div className="about-copy centered-copy"><div className="section-kicker">QUEM SOMOS</div><h2>Anjel Cuidados: <span>presença que faz bem.</span></h2><p>A Anjel Cuidados nasceu para apoiar famílias que precisam de uma pessoa de confiança ao lado de seus pequenos em momentos da rotina em que não conseguem estar presentes.</p><p>Nosso atendimento é domiciliar, em Teresina-PI, com profissionais da área de enfermagem com experiência e uma proposta centrada em cuidado, responsabilidade e acolhimento.</p><div className="about-points centered-about-points"><div><HeartHandshake/><span><strong>Humanização</strong><small>Respeito à rotina e à individualidade da família.</small></span></div><div><ShieldCheck/><span><strong>Responsabilidade</strong><small>Atendimento com atenção aos limites e necessidades combinados.</small></span></div><div><Home/><span><strong>Conforto</strong><small>O cuidado acontece onde a criança se sente em casa.</small></span></div></div><div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Agendar atendimento</a></div></div>
+        <div className="container about-clinic-layout">
+          <div className="about-copy centered-copy"><div className="section-kicker">QUEM SOMOS</div><h2>Anjel Cuidados: <span>presença que faz bem.</span></h2><p>A Anjel Cuidados nasceu para apoiar famílias que precisam de uma pessoa de confiança ao lado de seus pequenos em momentos da rotina em que não conseguem estar presentes.</p><p>Nosso atendimento é domiciliar, em Teresina-PI, com profissionais da área de enfermagem com experiência e uma proposta centrada em cuidado, responsabilidade e acolhimento.</p></div>
+          <div className="clinic-gallery-heading"><span>CONHEÇA O NOSSO ESPAÇO</span><h3>Ambientes preparados para acolher e cuidar.</h3><p>Conheça as salas da Anjel Cuidados, pensadas para diferentes profissionais e para o atendimento infantil.</p></div>
+          <div className="clinic-gallery" aria-label="Fotos das salas da Anjel Cuidados">
+            <div className="clinic-gallery-track">
+              {[...clinicPhotos, ...clinicPhotos].map((photo, index) => <figure className="clinic-gallery-card" key={`${photo.src}-${index}`}><img src={photo.src} alt={index < clinicPhotos.length ? photo.alt : ""} loading={index > 2 ? "lazy" : "eager"} /><figcaption><Home size={15}/>{photo.label} • Anjel Cuidados</figcaption></figure>)}
+            </div>
+          </div>
+          <div className="about-points centered-about-points"><div><HeartHandshake/><span><strong>Humanização</strong><small>Respeito à rotina e à individualidade da família.</small></span></div><div><ShieldCheck/><span><strong>Responsabilidade</strong><small>Atendimento com atenção aos limites e necessidades combinados.</small></span></div><div><Home/><span><strong>Conforto</strong><small>Ambientes acolhedores para cada atendimento.</small></span></div></div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Agendar atendimento</a></div>
         </div>
       </section>
 
