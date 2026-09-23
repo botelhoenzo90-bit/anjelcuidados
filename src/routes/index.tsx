@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound } from "lucide-react";
+import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, MessageCircle, Phone, Play, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound } from "lucide-react";
 import { useState } from "react";
 import clinicAsset from "../assets/clinica-anjel.jpg.asset.json";
 import logoAsset from "../assets/logo-anjel.png.asset.json";
@@ -98,6 +98,29 @@ function Index() {
         </div>
       </section>
 
+
+      <section className="section video-section" id="video">
+        <div className="container">
+          <div className="video-section-grid">
+            <div className="video-copy">
+              <div className="section-kicker">CONHEÇA A ANJEL CUIDADOS</div>
+              <h2>Um cuidado que começa <span>antes mesmo do atendimento.</span></h2>
+              <p>Assista ao vídeo e conheça melhor a Anjel Cuidados, nossa proposta de atendimento domiciliar e a forma como buscamos oferecer mais tranquilidade para famílias de Teresina.</p>
+              <p>Porque para nós, cuidar também é ouvir, acolher e respeitar a rotina de cada família.</p>
+              <a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Falar com a Anjel</a>
+            </div>
+            <div className="video-placeholder">
+              <div className="video-frame">
+                <div className="video-screen">
+                  <div className="video-play"><Play size={27} fill="currentColor"/></div>
+                  <span>Seu vídeo aqui</span>
+                  <small>Adicione o link ou arquivo do vídeo da Anjel Cuidados</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section feature-carousel-section">
         <div className="container">
