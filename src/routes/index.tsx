@@ -184,7 +184,7 @@ function Index() {
           <div className="clinic-gallery-heading"><span>CONHEÇA O NOSSO ESPAÇO</span><h3>Ambientes preparados para acolher e cuidar.</h3><p>Conheça as salas da Anjel Cuidados, pensadas para diferentes profissionais e para o atendimento infantil.</p></div>
           <div className="clinic-gallery" aria-label="Fotos das salas da Anjel Cuidados">
             <div className="clinic-gallery-track">
-              {[...clinicPhotos, ...clinicPhotos].map((photo, index) => <figure className="clinic-gallery-card" key={`${photo.src}-${index}`}><img src={photo.src} alt={index < clinicPhotos.length ? photo.alt : ""} loading={index > 2 ? "lazy" : "eager"} /><figcaption><Home size={15}/>{photo.label} • Anjel Cuidados</figcaption></figure>)}
+              {[...clinicPhotos, ...clinicPhotos].map((photo, index) => <figure className="clinic-gallery-card" key={`${photo.src}-${index}`}><img src={photo.src} alt={index < clinicPhotos.length ? photo.alt : ""} loading={index > 2 ? "lazy" : "eager"} /></figure>)}
             </div>
           </div>
           <div className="about-points centered-about-points"><div><HeartHandshake/><span><strong>Humanização</strong><small>Respeito à rotina e à individualidade da família.</small></span></div><div><ShieldCheck/><span><strong>Responsabilidade</strong><small>Atendimento com atenção aos limites e necessidades combinados.</small></span></div><div><Home/><span><strong>Conforto</strong><small>Ambientes acolhedores para cada atendimento.</small></span></div></div>
