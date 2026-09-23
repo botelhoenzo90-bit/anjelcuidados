@@ -52,3 +52,44 @@
   .service-carousel,.testimonial-carousel{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.service-grid .service-card:not(:first-child){display:none}.service-carousel{position:relative}.service-carousel>.round-arrow{position:absolute;opacity:.9;z-index:4}.service-carousel>.round-arrow:first-child{left:-5px}.service-carousel>.round-arrow:last-child{right:-5px}.testimonial-carousel>.round-arrow{display:none}
   .pain-grid,.about-grid{gap:38px}.pain-image-wrap img,.about-photo img{aspect-ratio:1/.9}.steps-grid,.package-grid{grid-template-columns:1fr}.step-card{min-height:auto}.feature-slide{min-height:330px;padding:30px}.testimonial-card{padding:34px 24px;min-height:280px}.cta-inner{flex-direction:column;align-items:flex-start}.cta-inner .button{width:100%}.footer-grid{grid-template-columns:1fr;gap:30px}.footer-bottom{flex-direction:column}.about-badge{right:10px;bottom:12px}.floating-whatsapp{width:56px;height:56px;right:16px;bottom:16px}
 }
+
+
+/* Renovação visual Anjel Cuidados */
+#lovable-badge{display:none !important}
+.section-action{display:flex;justify-content:center;align-items:center;margin-top:34px;text-align:center}
+.section-action .button{min-width:210px}
+.service-marquee,.testimonial-marquee{width:100%;overflow:hidden;position:relative}
+.service-marquee{padding:8px 0 18px}
+.service-track,.testimonial-track{display:flex;width:max-content;align-items:stretch;will-change:transform}
+.service-track{gap:18px;animation:serviceLoop 34s linear infinite}
+.service-track .service-card{width:310px;flex:0 0 310px;min-height:245px;display:flex;flex-direction:column;text-align:center;align-items:center;justify-content:flex-start}
+.service-track .service-card h3{margin-top:18px}
+.service-track .service-card p{max-width:255px}
+.service-track .service-link{margin-top:auto;padding-top:18px}
+@keyframes serviceLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.testimonial-marquee{padding:8px 0 18px}
+.testimonial-track{gap:20px;animation:testimonialLoop 31s linear infinite}
+.testimonial-track .testimonial-card{width:390px;flex:0 0 390px;min-height:285px;padding:32px 30px}
+.testimonial-track .testimonial-card blockquote{font-size:18px;margin:18px auto}
+@keyframes testimonialLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.service-marquee:hover .service-track,.testimonial-marquee:hover .testimonial-track{animation-play-state:paused}
+.marquee-section{background:linear-gradient(90deg,#f8e4ed,#eee5f8,#f9e8e8);color:#694657;border-color:rgba(160,108,137,.12)}
+.marquee-track svg{color:#c77d9a}
+.pain-section{background:linear-gradient(135deg,#fff4f1,#f7eef7)}
+.feature-carousel-section{background:linear-gradient(135deg,#fff0f4,#f0e9f8);color:#5a3c49;border-top:1px solid #f0dfe8;border-bottom:1px solid #eee1ec}
+.feature-copy .section-kicker{color:#a45b78}.feature-copy h2{color:#5a3a49}.feature-copy h2 span{color:#b05f82}.feature-copy>p{color:#74646c}.feature-bullets span{color:#66555d}.feature-bullets svg{color:#b86e8c}.feature-copy .button-primary{color:#fff}.feature-slide{background:linear-gradient(145deg,#fff,#f8f0fa);border:1px solid #eadde8;box-shadow:0 22px 50px rgba(100,67,88,.1)}.feature-icon{color:#7c639c;background:#eee3f5}.slide-count{color:#9b8590}.feature-slide h3{color:#5a3b48}.feature-slide p{color:#77666e}.feature-controls button{border-color:#e3d6e1;background:#fff;color:#8a6476}
+.about-section{background:linear-gradient(135deg,#fdf1f5,#f3edfa)}
+.faq-section{background:linear-gradient(135deg,#fff7f2,#f7f0f8)}
+.cta-section{background:linear-gradient(135deg,#f8dfe9,#e8ddf3);color:#5b3c4a;border-top:1px solid #eedce6}.cta-inner h2{color:#5a3947}.cta-inner p{color:#765f69}.cta-inner .section-kicker{color:#a45b78}.button-white{background:#fff;color:#a25473;border:1px solid #ecdde4}
+.site-footer{background:linear-gradient(135deg,#fff2f4,#f0e9f7);color:#5a3d49;border-top:1px solid #eadde5}.footer-brand{color:#5a3d49}.footer-brand small{color:#967c91}.footer-grid p{color:#796870}.footer-grid h4{color:#9b5f79}.footer-grid>div>span,.footer-grid>div>a{color:#75636c}.footer-grid>div>a:hover{color:#a05272}.footer-grid svg{color:#c47796}.footer-bottom{border-top-color:#e5d9e0;color:#927f88}
+.service-card,.package-card,.step-card,.testimonial-card{box-shadow:0 16px 40px rgba(109,72,92,.07)}
+.hero-section{background:radial-gradient(circle at 8% 12%,rgba(237,183,204,.32),transparent 32%),radial-gradient(circle at 91% 20%,rgba(192,170,226,.28),transparent 30%),linear-gradient(135deg,#fffaf7 0%,#fff5f4 48%,#faf4fc 100%)}
+.hero-actions .button,.nav-cta,.button-primary{transition:transform .22s ease,box-shadow .22s ease}.hero-actions .button:hover,.nav-cta:hover,.button-primary:hover{box-shadow:0 16px 34px rgba(185,103,140,.2)}
+.floating-whatsapp{animation:floatWhatsapp 3.2s ease-in-out infinite}
+@keyframes floatWhatsapp{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(max-width:720px){
+  .service-track{gap:12px;animation-duration:26s}.service-track .service-card{width:280px;flex-basis:280px;min-height:270px;padding:24px 20px}.service-track .service-card h3{font-size:18px}.testimonial-track{gap:12px;animation-duration:24s}.testimonial-track .testimonial-card{width:min(84vw,340px);flex-basis:min(84vw,340px);min-height:290px;padding:28px 22px}.testimonial-track .testimonial-card blockquote{font-size:17px}.section-action{margin-top:28px}.section-action .button{width:min(100%,330px)}.hero-copy h1{line-height:1.02}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.marquee-track,.service-track,.testimonial-track,.floating-whatsapp{animation:none !important}.button,.service-card,.nav-cta{transition:none !important}.service-marquee,.testimonial-marquee{overflow-x:auto;scrollbar-width:thin}.service-track,.testimonial-track{transform:none !important}
+}
