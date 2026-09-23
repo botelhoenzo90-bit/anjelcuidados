@@ -122,3 +122,49 @@
 @media(max-width:1000px){.hero-grid{grid-template-columns:1fr}.hero-identity{min-height:330px}.centered-about-points{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.centered-about-points>div{justify-content:flex-start}}
 @media(max-width:720px){.hero-section{padding-top:55px}.hero-grid{min-height:0}.hero-copy h1{font-size:42px}.hero-identity{min-height:300px;margin-top:10px}.hero-logo-wordmark strong{font-size:68px}.hero-logo-wordmark span{font-size:18px}.hero-location{font-size:10px}.info-track{gap:12px;animation-duration:25s}.info-card{width:285px;flex-basis:285px;min-height:275px;padding:26px 21px}.centered-check-list{width:100%}.centered-about-points{width:100%}}
 @media(prefers-reduced-motion:reduce){.info-track{animation:none!important}.info-marquee{overflow-x:auto}.info-track{transform:none!important}}
+
+
+/* Refinamento de composição e densidade */
+.hero-section{padding-top:68px;padding-bottom:62px}
+.hero-grid{min-height:500px}
+.hero-copy{max-width:690px}
+.hero-copy h1{margin-bottom:18px}.hero-subtitle{margin-bottom:22px}.hero-trust{margin-top:20px}
+.hero-identity{display:none!important}
+.marquee-section{padding:13px 0}
+.section{padding:64px 0}
+.section-heading{margin-bottom:28px}.section-heading h2{margin-bottom:10px}.section-heading p{max-width:650px}
+.section-action{margin-top:24px}
+.soft-section{padding-top:58px;padding-bottom:58px}
+.pain-section{padding-top:58px;padding-bottom:58px}
+.centered-story{min-height:0}.centered-copy{max-width:760px}
+.centered-copy .section-kicker{margin-bottom:10px}.centered-copy h2{margin-bottom:13px}.centered-copy>p{max-width:690px;margin-left:auto;margin-right:auto}
+.centered-check-list{margin-top:20px;margin-bottom:22px;gap:9px}
+.centered-check-list div{padding:10px 14px}
+.info-section{padding-top:58px;padding-bottom:58px}
+.steps-grid{gap:16px;margin-top:24px}
+.step-card{min-height:215px;padding:26px 22px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.step-number{position:static!important;margin:0 auto 17px!important;width:48px!important;height:48px!important;border-radius:50%!important;display:grid!important;place-items:center!important;font-size:15px!important;font-weight:900!important}
+.step-card h3{margin-bottom:9px;font-size:18px}.step-card p{max-width:235px;margin:0 auto;line-height:1.6}
+.feature-carousel-section{padding-top:58px;padding-bottom:58px}
+.feature-centered-heading{margin-bottom:25px}
+.info-marquee{padding:5px 0 8px}
+.info-card{min-height:245px;padding:25px 24px;justify-content:flex-start}.info-card-icon{width:54px;height:54px;border-radius:17px;margin-bottom:13px}.info-card h3{font-size:21px;margin:8px 0}.info-card p{line-height:1.55}
+.packages-section{padding-top:58px;padding-bottom:58px}.package-grid{gap:16px;margin-top:24px}.package-card{min-height:205px;padding:23px 18px}.package-icon-centered{width:54px;height:54px;border-radius:17px;margin-bottom:13px}.package-card h3{font-size:17px;margin-bottom:7px}.package-card p{line-height:1.55}
+.about-section{padding-top:58px;padding-bottom:58px}.centered-about-points{margin-top:24px;gap:16px}.centered-about-points>div{padding:15px}
+.testimonials-section{padding-top:58px;padding-bottom:50px}.testimonial-marquee{padding-top:4px;padding-bottom:6px}.testimonial-track .testimonial-card{min-height:245px;padding:25px 26px}
+.faq-section{padding-top:58px;padding-bottom:58px}.faq-grid{gap:42px}
+.cta-section{padding:48px 0}.cta-inner{gap:30px}
+.site-footer{padding-top:42px}.footer-grid{padding-bottom:32px}
+@media(max-width:720px){
+ .hero-section{padding-top:48px;padding-bottom:48px}.hero-grid{min-height:0}
+ .hero-copy h1{font-size:38px;margin-bottom:14px}.hero-subtitle{font-size:14px;line-height:1.6}
+ .hero-actions{gap:10px}.hero-trust{gap:9px;margin-top:17px}
+ .section{padding:48px 0}.section-heading{margin-bottom:22px}.section-heading h2{font-size:30px}
+ .pain-section,.info-section,.feature-carousel-section,.packages-section,.about-section,.testimonials-section,.faq-section{padding-top:46px;padding-bottom:46px}
+ .steps-grid{grid-template-columns:1fr 1fr;gap:12px}.step-card{min-height:205px;padding:21px 14px}.step-number{width:44px!important;height:44px!important;margin-bottom:13px!important}.step-card h3{font-size:16px}.step-card p{font-size:12px}
+ .info-card{width:275px;flex-basis:275px;min-height:235px}
+ .package-card{min-height:185px;padding:20px 14px}.package-card h3{font-size:16px}
+ .centered-about-points{margin-top:20px}
+ .cta-section{padding:40px 0}.cta-inner{gap:20px}
+}
+@media(max-width:520px){.steps-grid{grid-template-columns:1fr}.step-card{min-height:175px}}
