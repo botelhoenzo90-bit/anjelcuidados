@@ -188,3 +188,14 @@
 .cta-section{padding:40px 0}.site-footer{padding-top:34px}.footer-grid{padding-bottom:25px}
 @media(max-width:800px){.about-clinic-grid{grid-template-columns:1fr;gap:28px}.clinic-photo{width:min(100%,520px);margin:0 auto}}
 @media(max-width:720px){.hero-section{padding-top:34px;padding-bottom:38px}.hero-brand-logo{width:min(210px,58vw);margin-bottom:12px}.section{padding:38px 0}.pain-section,.info-section,.feature-carousel-section,.packages-section,.about-section,.testimonials-section,.faq-section{padding-top:38px;padding-bottom:38px}.section-heading{margin-bottom:18px}.clinic-photo{border-radius:18px}.about-clinic-grid{gap:24px}.cta-section{padding:34px 0}.site-footer{padding-top:30px}.floating-whatsapp{width:54px;height:54px}}
+
+
+/* Seção institucional em vídeo */
+.video-section{padding:58px 0;background:linear-gradient(135deg,#fffaf8,#f7eff8);border-top:1px solid #f0e2ea;border-bottom:1px solid #f0e2ea}
+.video-section-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center;max-width:1080px;margin:0 auto}
+.video-copy{max-width:500px}.video-copy .section-kicker{color:#a45b78}.video-copy h2{color:#5a3b48;font-size:clamp(32px,3.6vw,46px);line-height:1.08;margin:10px 0 16px}.video-copy h2 span{color:#b05f82}.video-copy p{color:#76656d;font-size:14px;line-height:1.75;margin:0 0 12px}.video-copy .button{margin-top:10px}
+.video-placeholder{width:100%}.video-frame{padding:9px;border-radius:28px;background:linear-gradient(135deg,#e9cbd8,#ded1eb);box-shadow:0 22px 50px rgba(104,69,88,.13)}
+.video-screen{aspect-ratio:16/9;border-radius:21px;background:linear-gradient(135deg,#f5e5eb,#eee6f4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#8c6277;position:relative;overflow:hidden}
+.video-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,rgba(255,255,255,.8),transparent 45%)}
+.video-play{position:relative;width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:#b96183;color:#fff;box-shadow:0 12px 30px rgba(140,76,103,.25);margin-bottom:12px}.video-screen span,.video-screen small{position:relative}.video-screen span{font-size:14px;font-weight:800}.video-screen small{font-size:10px;color:#9b808d;margin-top:5px}
+@media(max-width:800px){.video-section{padding:46px 0}.video-section-grid{grid-template-columns:1fr;gap:28px}.video-copy{max-width:700px;text-align:center;margin:0 auto}.video-copy .section-kicker{justify-content:center}.video-copy .button{margin-left:auto;margin-right:auto}.video-screen{aspect-ratio:16/10}}
