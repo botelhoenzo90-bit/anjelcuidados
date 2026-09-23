@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, MessageCircle, Phone, Play, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound } from "lucide-react";
+import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound } from "lucide-react";
 import { useState } from "react";
 import roomOneCoverAsset from "../assets/Sala_01_page-0001.jpg.asset.json";
 import roomOneSideAsset from "../assets/Sala_01_page-0002.jpg.asset.json";
@@ -11,6 +11,7 @@ import roomTwoDeskAsset from "../assets/Sala_02_2_1_page-0003.jpg.asset.json";
 import roomTwoToysAsset from "../assets/Sala_02_2_1_page-0004.jpg.asset.json";
 import logoAsset from "../assets/logo-anjel.png.asset.json";
 import whatsappAsset from "../assets/whatsapp.png.asset.json";
+import vslAsset from "../assets/anjel-cuidados-vsl.mp4.asset.json";
 
 const WHATSAPP = "https://wa.me/558681932631?text=Ol%C3%A1%20Anjel%20Cuidados!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20domiciliar.";
 
@@ -129,11 +130,10 @@ function Index() {
             </div>
             <div className="video-placeholder">
               <div className="video-frame">
-                <div className="video-screen">
-                  <div className="video-play"><Play size={27} fill="currentColor"/></div>
-                  <span>Seu vídeo aqui</span>
-                  <small>Adicione o link ou arquivo do vídeo da Anjel Cuidados</small>
-                </div>
+                <video className="video-screen" controls playsInline preload="metadata" aria-label="Vídeo de apresentação da Anjel Cuidados">
+                  <source src={vslAsset.url} type="video/mp4" />
+                  Seu navegador não suporta a reprodução deste vídeo.
+                </video>
               </div>
             </div>
           </div>
