@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Baby, BabyIcon, CalendarCheck2, Check, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, Heart, HeartHandshake, Home, Instagram, MapPin, Menu, MessageCircle, Phone, ShieldCheck, Sparkles, Stethoscope, UserRoundCheck, UsersRound, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const WHATSAPP = "https://wa.me/558681932631?text=Ol%C3%A1%20Anjel%20Cuidados!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20domiciliar.";
 
@@ -44,20 +44,12 @@ const faqs = [
 
 function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [serviceIndex, setServiceIndex] = useState(0);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [infoIndex, setInfoIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const visibleServices = useMemo(() => [0, 1, 2].map((offset) => services[(serviceIndex + offset) % services.length]), [serviceIndex]);
 
   useEffect(() => {
     const timer = window.setInterval(() => setInfoIndex((current) => (current + 1) % infoSlides.length), 4800);
-    return () => window.clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => setTestimonialIndex((current) => (current + 1) % testimonials.length), 6000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -124,12 +116,12 @@ function Index() {
       <section className="section soft-section" id="servicos">
         <div className="container">
           <div className="section-heading center-heading"><div className="section-kicker">CUIDADOS PERSONALIZADOS</div><h2>Quando sua família precisa de apoio, <span>você não precisa passar por isso sozinho.</span></h2><p>Serviços pensados para trazer mais segurança, praticidade e tranquilidade para diferentes momentos da rotina familiar.</p></div>
-          <div className="service-carousel">
-            <button className="round-arrow" onClick={() => setServiceIndex((current) => (current - 1 + services.length) % services.length)} aria-label="Serviços anteriores"><ChevronLeft /></button>
-            <div className="service-grid">{visibleServices.map((service) => { const Icon = service.icon; return <article className={`service-card tone-${service.tone}`} key={service.title}><div className="service-icon"><Icon size={25} /></div><h3>{service.title}</h3><p>{service.description}</p><span className="service-link">Saiba mais <ChevronRight size={15} /></span></article>; })}</div>
-            <button className="round-arrow" onClick={() => setServiceIndex((current) => (current + 1) % services.length)} aria-label="Próximos serviços"><ChevronRight /></button>
+          <div className="service-marquee" aria-label="Cuidados personalizados">
+            <div className="service-track">
+              {[...services, ...services].map((service, index) => { const Icon = service.icon; return <article className={"service-card tone-" + service.tone} key={service.title + "-" + index}><div className="service-icon"><Icon size={25} /></div><h3>{service.title}</h3><p>{service.description}</p><a className="service-link" href={WHATSAPP} target="_blank" rel="noreferrer">Agendar atendimento <ChevronRight size={15} /></a></article>; })}
+            </div>
           </div>
-          <div className="carousel-dots">{services.map((_, index) => <button key={index} className={index === serviceIndex ? "active" : ""} onClick={() => setServiceIndex(index)} aria-label={`Ir para serviço ${index + 1}`} />)}</div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Agendar atendimento</a></div>
         </div>
       </section>
 
@@ -144,12 +136,13 @@ function Index() {
         <div className="container">
           <div className="section-heading center-heading"><div className="section-kicker">COMO FUNCIONA</div><h2>Seu cuidado começa com uma conversa.</h2><p>Do primeiro contato ao atendimento, tudo é combinado com clareza e atenção.</p></div>
           <div className="steps-grid">{steps.map((step) => <div className="step-card" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18} /> Agendar atendimento</a></div>
         </div>
       </section>
 
       <section className="section feature-carousel-section">
         <div className="container feature-panel">
-          <div className="feature-copy"><div className="section-kicker">POR QUE TER APOIO?</div><h2>Mais tranquilidade para você. <span>Mais acolhimento para quem você ama.</span></h2><p>O atendimento domiciliar foi pensado para preservar a rotina da criança e oferecer à família uma rede de apoio quando ela mais precisa.</p><div className="feature-bullets"><span><UserRoundCheck size={17} /> Profissional com experiência</span><span><Home size={17} /> Atendimento no ambiente familiar</span><span><HeartHandshake size={17} /> Olhar humano e individualizado</span></div><a className="text-link" href={WHATSAPP} target="_blank" rel="noreferrer">Tirar dúvidas no WhatsApp <ChevronRight size={17} /></a></div>
+          <div className="feature-copy"><div className="section-kicker">POR QUE TER APOIO?</div><h2>Mais tranquilidade para você. <span>Mais acolhimento para quem você ama.</span></h2><p>O atendimento domiciliar foi pensado para preservar a rotina da criança e oferecer à família uma rede de apoio quando ela mais precisa.</p><div className="feature-bullets"><span><UserRoundCheck size={17} /> Profissional com experiência</span><span><Home size={17} /> Atendimento no ambiente familiar</span><span><HeartHandshake size={17} /> Olhar humano e individualizado</span></div><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><CalendarCheck2 size={18} /> Agendar atendimento</a></div>
           <div className="feature-slider"><div className="feature-slide">{(() => { const Icon = infoSlides[infoIndex].icon; return <div className="feature-icon"><Icon size={32} /></div>; })()}<span className="slide-count">0{infoIndex + 1} / 0{infoSlides.length}</span><h3>{infoSlides[infoIndex].title}</h3><p>{infoSlides[infoIndex].text}</p><div className="feature-controls"><button onClick={() => setInfoIndex((current) => (current - 1 + infoSlides.length) % infoSlides.length)} aria-label="Anterior"><ChevronLeft /></button><button onClick={() => setInfoIndex((current) => (current + 1) % infoSlides.length)} aria-label="Próximo"><ChevronRight /></button></div></div></div>
         </div>
       </section>
@@ -164,7 +157,7 @@ function Index() {
             { number: "04", title: "Pós-parto e amamentação", text: "Apoio para a mãe e o bebê durante uma fase de adaptação intensa.", icon: Heart },
             { number: "05", title: "Pós-operatório", text: "Acompanhamento durante a recuperação, conforme o cuidado contratado.", icon: ShieldCheck },
             { number: "06", title: "Cuidados especiais", text: "Converse com a equipe sobre uma necessidade específica da sua família.", icon: Stethoscope },
-          ].map((item) => { const Icon = item.icon; return <article className="package-card" key={item.number}><div className="package-top"><span>{item.number}</span><Icon size={25} /></div><h3>{item.title}</h3><p>{item.text}</p><a href={WHATSAPP} target="_blank" rel="noreferrer">Consultar atendimento <ChevronRight size={15} /></a></article>; })}</div>
+          ].map((item) => { const Icon = item.icon; return <article className="package-card" key={item.number}><div className="package-top"><span>{item.number}</span><Icon size={25} /></div><h3>{item.title}</h3><p>{item.text}</p><a href={WHATSAPP} target="_blank" rel="noreferrer">Agendar atendimento <ChevronRight size={15} /></a></article>; })}</div>
         </div>
       </section>
 
@@ -177,9 +170,13 @@ function Index() {
 
       <section className="section testimonials-section">
         <div className="container">
-          <div className="section-heading center-heading"><div className="section-kicker">EXPERIÊNCIAS</div><h2>Famílias que encontraram <span>apoio na rotina.</span></h2></div>
-          <div className="testimonial-carousel"><button className="round-arrow" onClick={() => setTestimonialIndex((current) => (current - 1 + testimonials.length) % testimonials.length)} aria-label="Avaliação anterior"><ChevronLeft /></button><article className="testimonial-card"><div className="stars">★★★★★</div><blockquote>“{testimonials[testimonialIndex].text}”</blockquote><div className="testimonial-author"><div className="avatar">{testimonials[testimonialIndex].name.charAt(0)}</div><div><strong>{testimonials[testimonialIndex].name}</strong><small>{testimonials[testimonialIndex].role}</small></div></div></article><button className="round-arrow" onClick={() => setTestimonialIndex((current) => (current + 1) % testimonials.length)} aria-label="Próxima avaliação"><ChevronRight /></button></div>
-          <div className="carousel-dots">{testimonials.map((_, index) => <button key={index} className={index === testimonialIndex ? "active" : ""} onClick={() => setTestimonialIndex(index)} aria-label={`Avaliação ${index + 1}`} />)}</div>
+          <div className="section-heading center-heading"><div className="section-kicker">EXPERIÊNCIAS</div><h2>Famílias que encontraram <span>apoio na rotina.</span></h2><p>Uma experiência de cuidado construída com presença, respeito e atenção.</p></div>
+          <div className="testimonial-marquee" aria-label="Depoimentos">
+            <div className="testimonial-track">
+              {[...testimonials, ...testimonials].map((testimonial, index) => <article className="testimonial-card" key={testimonial.name + "-" + index}><div className="stars">★★★★★</div><blockquote>“{testimonial.text}”</blockquote><div className="testimonial-author"><div className="avatar">{testimonial.name.charAt(0)}</div><div><strong>{testimonial.name}</strong><small>{testimonial.role}</small></div></div></article>)}
+            </div>
+          </div>
+          <div className="section-action"><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Agendar atendimento</a></div>
           <p className="testimonial-note">Depoimentos ilustrativos para a estrutura do site. Substitua pelos depoimentos reais das famílias atendidas antes da publicação.</p>
         </div>
       </section>
@@ -188,7 +185,7 @@ function Index() {
         <div className="container faq-grid"><div><div className="section-kicker">DÚVIDAS FREQUENTES</div><h2>Antes de chamar, <span>talvez sua dúvida já esteja aqui.</span></h2><p>Se não encontrar a resposta, fale diretamente com a Anjel pelo WhatsApp.</p><a className="button button-primary compact" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Falar com a equipe</a></div><div className="faq-list">{faqs.map((faq, index) => <div className={`faq-item ${openFaq === index ? "open" : ""}`} key={faq.q}><button onClick={() => setOpenFaq(openFaq === index ? null : index)}><span>{faq.q}</span><ChevronDown size={19} /></button>{openFaq === index && <p>{faq.a}</p>}</div>)}</div></div>
       </section>
 
-      <section className="cta-section"><div className="container cta-inner"><div><div className="section-kicker">ANJEL CUIDADOS • TERESINA-PI</div><h2>Precisa de apoio para cuidar do seu pequeno?</h2><p>Conte para a gente o que sua família precisa. Vamos conversar sobre o atendimento.</p></div><a className="button button-white" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Quero falar pelo WhatsApp</a></div></section>
+      <section className="cta-section"><div className="container cta-inner"><div><div className="section-kicker">ANJEL CUIDADOS • TERESINA-PI</div><h2>Precisa de apoio para cuidar do seu pequeno?</h2><p>Conte para a gente o que sua família precisa. Vamos conversar sobre o atendimento.</p></div><a className="button button-white" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Agendar atendimento</a></div></section>
 
       <footer className="site-footer"><div className="container footer-grid"><div><div className="brand footer-brand"><span className="brand-mark"><Heart size={18} fill="currentColor" /></span><span><strong>Anjel</strong><small>Cuidados</small></span></div><p>Cuidado que acolhe. Presença que faz bem.</p></div><div><h4>Atendimento</h4><span><MapPin size={15} /> Teresina • Piauí</span><a href={WHATSAPP} target="_blank" rel="noreferrer"><Phone size={15} /> (86) 98193-2631</a></div><div><h4>Conecte-se</h4><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={16} /> Instagram</a><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Anjel Cuidados. Todos os direitos reservados.</span><span>Atendimento humanizado e profissional.</span></div></footer>
 
