@@ -228,13 +228,29 @@ function Index() {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Anjel Cuidados | Cuidado domiciliar em Teresina" },
-      { name: "description", content: "Acompanhamento domiciliar para recém-nascidos e crianças de 0 a 6 anos em Teresina-PI. Cuidado profissional, humanizado e acolhedor." },
-      { property: "og:title", content: "Anjel Cuidados | Cuidado que acolhe" },
-      { property: "og:description", content: "Acompanhamento domiciliar para sua família em Teresina-PI." },
+      { title: "Cuidado domiciliar infantil em Teresina | Anjel Cuidados" },
+      { name: "description", content: "Cuidado domiciliar para recém-nascidos e crianças de 0 a 6 anos em Teresina-PI. Apoio no pós-parto, amamentação, viagens e rotina familiar." },
+      { property: "og:title", content: "Cuidado domiciliar infantil em Teresina | Anjel Cuidados" },
+      { property: "og:description", content: "Acompanhamento domiciliar para recém-nascidos e crianças de 0 a 6 anos em Teresina-PI, com cuidado profissional e acolhedor." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://anjelcuidados.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://anjelcuidados.lovable.app/" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Anjel Cuidados",
+        url: "https://anjelcuidados.lovable.app/",
+        telephone: "+55 86 98193-2631",
+        description: "Cuidado domiciliar para recém-nascidos e crianças de 0 a 6 anos em Teresina-PI.",
+        areaServed: { "@type": "City", name: "Teresina" },
+        address: { "@type": "PostalAddress", addressLocality: "Teresina", addressRegion: "PI", addressCountry: "BR" },
+        serviceType: ["Cuidado domiciliar infantil", "Cuidados com recém-nascidos", "Apoio no pós-parto", "Apoio à amamentação", "Acompanhamento infantil"],
+      }),
+    }],
   }),
   component: Index,
 });

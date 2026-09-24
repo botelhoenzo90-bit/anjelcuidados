@@ -20,11 +20,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Anjel Cuidados | Cuidado domiciliar em Teresina" },
-      { name: "description", content: "Cuidado domiciliar para recém-nascidos e crianças de 0 a 6 anos em Teresina-PI." },
-      { property: "og:title", content: "Anjel Cuidados | Cuidado que acolhe" },
-      { property: "og:description", content: "Acompanhamento domiciliar para sua família em Teresina-PI." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Anjel Cuidados" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: appCss }, { rel: "icon", href: "/favicon.png", type: "image/png" }],
