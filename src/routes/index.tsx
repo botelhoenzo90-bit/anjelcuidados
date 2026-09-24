@@ -14,6 +14,9 @@ import whatsappAsset from "../assets/whatsapp.png.asset.json";
 import vslAsset from "../assets/anjel-cuidados-vsl.mp4.asset.json";
 
 const WHATSAPP = "https://wa.me/558681932631?text=Ol%C3%A1%20Anjel%20Cuidados!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20domiciliar.";
+const SHARE_LOGO = `https://anjelcuidados.lovable.app${logoAsset.url}`;
+
+const marqueeItems = ["Recém-nascido", "Crianças até 6 anos", "Pós-parto", "Amamentação", "Pós-operatório", "Viagens", "Acompanhamento domiciliar"];
 
 const services = [
   { title: "Cuidados com RN", description: "Apoio nos primeiros dias do recém-nascido, com cuidado, atenção e orientação à família.", icon: Baby, tone: "pink" },
@@ -94,7 +97,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="marquee-section" aria-label="Serviços e diferenciais"><div className="marquee-track">{["Recém-nascido", "Crianças até 6 anos", "Pós-parto", "Amamentação", "Pós-operatório", "Viagens", "Acompanhamento domiciliar", "Recém-nascido"].map((item, index) => <span key={`${item}-${index}`}><Heart size={14} fill="currentColor" /> {item}</span>)}</div></section>
+      <section className="marquee-section" aria-label="Serviços e diferenciais"><div className="marquee-track">{[...marqueeItems, ...marqueeItems].map((item, index) => <span key={`${item}-${index}`} aria-hidden={index >= marqueeItems.length}><Heart size={14} fill="currentColor" /> {item}</span>)}</div></section>
 
       <section className="section pain-section">
         <div className="container centered-story">
@@ -218,7 +221,7 @@ function Index() {
 
       <section className="cta-section"><div className="container cta-inner"><div><div className="section-kicker">ANJEL CUIDADOS • TERESINA-PI</div><h2>Precisa de apoio para cuidar do seu pequeno?</h2><p>Conte para a gente o que sua família precisa. Vamos conversar sobre o atendimento.</p></div><a className="button button-white" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Agendar atendimento</a></div></section>
 
-      <footer className="site-footer"><div className="container footer-grid"><div><div className="brand footer-brand"><span className="brand-mark"><Heart size={18} fill="currentColor" /></span><span><strong>Anjel</strong><small>Cuidados</small></span></div><p>Cuidado que acolhe. Presença que faz bem.</p></div><div><h4>Atendimento</h4><span><MapPin size={15} /> Teresina • Piauí</span><a href={WHATSAPP} target="_blank" rel="noreferrer"><Phone size={15} /> (86) 98193-2631</a></div><div><h4>Conecte-se</h4><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={16} /> Instagram</a><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Anjel Cuidados. Todos os direitos reservados.</span><span>Atendimento humanizado e profissional.</span></div></footer>
+      <footer className="site-footer"><div className="container footer-grid"><div><img className="footer-logo" src={logoAsset.url} alt="Anjel Cuidados" /><p>Cuidado que acolhe. Presença que faz bem.</p></div><div><h4>Atendimento</h4><span><MapPin size={15} /> Teresina • Piauí</span><a href={WHATSAPP} target="_blank" rel="noreferrer"><Phone size={15} /> (86) 98193-2631</a></div><div><h4>Conecte-se</h4><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={16} /> Instagram</a><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Anjel Cuidados. Todos os direitos reservados.</span><span>Atendimento humanizado e profissional.</span></div></footer>
 
       <a className="floating-whatsapp" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a Anjel Cuidados pelo WhatsApp"><img src={whatsappAsset.url} alt="" /></a>
     </main>
@@ -234,7 +237,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Acompanhamento domiciliar para recém-nascidos e crianças de 0 a 6 anos em Teresina-PI, com cuidado profissional e acolhedor." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://anjelcuidados.lovable.app/" },
+      { property: "og:image", content: SHARE_LOGO },
+      { property: "og:image:alt", content: "Logomarca Anjel Cuidados" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: SHARE_LOGO },
     ],
     links: [{ rel: "canonical", href: "https://anjelcuidados.lovable.app/" }],
     scripts: [{

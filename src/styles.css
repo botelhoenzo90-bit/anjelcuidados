@@ -219,14 +219,16 @@ body,.site-shell,.soft-section,.packages-section,.clinic-space-section{backgroun
 .button-primary,.nav-cta,.button-white{background:#8968ad;color:#fff;border-color:#8968ad;box-shadow:0 14px 30px rgba(123,91,159,.22)}
 .hero-actions .button:hover,.nav-cta:hover,.button-primary:hover{box-shadow:0 16px 34px rgba(123,91,159,.25)}
 .button-white:hover{background:#76549b;border-color:#76549b}.hero-trust svg,.check-list span{color:#8061a5}.check-list span{background:#e9ddf3}
-.marquee-section{background:#f3dce9;color:#62465a;border-color:rgba(182,95,136,.16)}.marquee-track svg{color:#b65f88}
+.marquee-section{background:#efc8dc;color:#5f3e52;border-color:rgba(182,95,136,.2)}.marquee-track{animation-name:marquee-seamless}.marquee-track svg{color:#ad4e79}@keyframes marquee-seamless{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 17px))}}
 .pain-section,.about-section,.faq-section{background:linear-gradient(135deg,#f8f3fc,#eee5f7)}
 .video-section,.feature-carousel-section{background:linear-gradient(135deg,#f9f5fc,#eee5f7);border-color:#e4d8ee}
 .tone-pink,.tone-lilac,.tone-cream,.tone-rose,.tone-blue,.tone-mint{background:#f3edf9}.tone-pink .service-icon,.tone-lilac .service-icon,.tone-cream .service-icon,.tone-rose .service-icon,.tone-blue .service-icon,.tone-mint .service-icon{color:#79599e;background:#e4d7f0}
 .step-card,.package-card{background:#fdfbff;border-color:#e5d9ee}.step-number,.package-icon-centered{background:#e9ddf3;color:#79599e}
 .info-card{background:#f3edf9;border-color:#e2d5ec}.info-card-icon{background:#e5d7f0;color:#79599e}.info-card>span{color:#79599e}
-.testimonial-card{background:#f3edf9;border-color:#e1d4eb}.stars{color:#9a72b8}.avatar{background:#8968ad}
+.testimonial-card{background:#f3edf9;border-color:#e1d4eb}.stars{color:#f4b400}.avatar{background:#8968ad}
 .cta-section{background:linear-gradient(135deg,#e4d6ef,#d5c1e6 75%,#ead1df);color:#493a5b;border-color:#d9c8e7}.cta-inner h2{color:#493a5b}.cta-inner p{color:#665474}.cta-inner .section-kicker{color:#8061a5}
 .site-footer{background:linear-gradient(135deg,#f3ecf8,#e5d8ef);color:#493a5b;border-color:#d9cce5}.footer-brand{color:#493a5b}.footer-grid p,.footer-grid>div>span,.footer-grid>div>a{color:#685975}.footer-grid h4,.footer-grid svg{color:#8061a5}.footer-grid>div>a:hover{color:#a85f87}.footer-bottom{border-top-color:#d8cbe3;color:#796c84}
+.footer-logo{display:block;width:min(210px,70%);height:auto;margin:0 0 14px;filter:drop-shadow(0 8px 16px rgba(123,91,159,.12))}
+.clinic-gallery:hover .clinic-gallery-track{animation-play-state:running}.clinic-gallery-card{border-radius:22px}.clinic-gallery-card img{border-radius:inherit}
 .video-frame{background:linear-gradient(135deg,#d8c5e8,#eadbe9)}.video-screen{background:#ece1f4}
 .floating-whatsapp{box-shadow:0 12px 28px rgba(19,102,51,.24)}.floating-whatsapp img{filter:none}
