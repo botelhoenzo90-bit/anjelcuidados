@@ -202,3 +202,33 @@
 .video-placeholder{width:100%}.video-frame{padding:9px;border-radius:28px;background:linear-gradient(135deg,#e9cbd8,#ded1eb);box-shadow:0 22px 50px rgba(104,69,88,.13)}
 .video-screen{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:21px;background:#f5e5eb;object-fit:cover;overflow:hidden}
 @media(max-width:800px){.video-section{padding:46px 0}.video-section-grid{grid-template-columns:1fr;gap:0}.video-copy{display:contents}.video-copy .section-kicker{order:1;justify-content:center;text-align:center}.video-copy h2{order:2;text-align:center;margin-bottom:22px}.video-placeholder{order:3;margin-bottom:24px}.video-copy p{order:4;text-align:center}.video-copy .button{order:5;margin:10px auto 0}}
+
+/* Paleta principal lilás com rosa pontual */
+:root{
+  --background:oklch(.985 .012 305);--foreground:oklch(.29 .045 305);--card:oklch(.995 .006 305);--card-foreground:oklch(.29 .045 305);
+  --popover:oklch(.995 .006 305);--popover-foreground:oklch(.29 .045 305);--primary:oklch(.61 .14 305);--primary-foreground:oklch(.99 .005 305);
+  --secondary:oklch(.92 .052 305);--secondary-foreground:oklch(.34 .075 305);--muted:oklch(.96 .025 305);--muted-foreground:oklch(.51 .045 305);
+  --accent:oklch(.88 .065 305);--accent-foreground:oklch(.32 .065 305);--border:oklch(.9 .035 305);--input:oklch(.9 .035 305);--ring:oklch(.65 .13 305)
+}
+body,.site-shell,.soft-section,.packages-section,.clinic-space-section{background:#fcfaff}
+.hero-section{background:radial-gradient(circle at 88% 15%,rgba(192,170,226,.3),transparent 31%),linear-gradient(135deg,#fcfaff 0%,#f5effb 58%,#f8eef7 100%)}
+.hero-blur-one{background:#d8c5ea}.hero-blur-two{background:#cbb6e2}
+.eyebrow,.section-kicker,.clinic-gallery-heading>span,.service-link,.text-link,.package-card a{color:#8061a5}
+.hero-copy h1,.section-heading h2,.pain-copy h2,.about-copy h2,.faq-grid h2,.cta-inner h2,.clinic-gallery-heading h3,.video-copy h2{color:#493a5b}
+.hero-copy h1 em,.section-heading h2 span,.pain-copy h2 span,.about-copy h2 span,.faq-grid h2 span,.feature-centered-heading h2 span,.video-copy h2 span{color:#b65f88}
+.button-primary,.nav-cta{background:linear-gradient(135deg,#8f70b5,#a77cc1 72%,#c8789b);box-shadow:0 14px 30px rgba(123,91,159,.22)}
+.hero-actions .button:hover,.nav-cta:hover,.button-primary:hover{box-shadow:0 16px 34px rgba(123,91,159,.25)}
+.button-white{color:#76549b;border-color:#ded0eb}.hero-trust svg,.check-list span{color:#8061a5}.check-list span{background:#e9ddf3}
+.marquee-section{background:linear-gradient(90deg,#e9ddf3,#f3ecf9,#eadff4);color:#543f69;border-color:rgba(112,82,145,.12)}.marquee-track svg{color:#b9688e}
+.pain-section,.about-section,.faq-section{background:linear-gradient(135deg,#f8f3fc,#eee5f7)}
+.video-section,.feature-carousel-section{background:linear-gradient(135deg,#f9f5fc,#eee5f7);border-color:#e4d8ee}
+.tone-pink{background:#fbf0f6}.tone-pink .service-icon{color:#b65f88;background:#f2dbe7}
+.tone-lilac,.tone-cream,.tone-blue,.tone-mint{background:#f4eef9}.tone-lilac .service-icon,.tone-cream .service-icon,.tone-blue .service-icon,.tone-mint .service-icon{color:#8061a5;background:#e6d9f1}
+.tone-rose{background:#f8edf5}.tone-rose .service-icon{color:#a76494;background:#eadcf0}
+.step-card,.package-card{background:#fdfbff;border-color:#e5d9ee}.step-number,.package-icon-centered{background:#e9ddf3;color:#79599e}
+.info-card{background:linear-gradient(145deg,#fdfbff,#f2eaf8);border-color:#e2d5ec}.info-card-icon{background:#e5d7f0;color:#79599e}.info-card>span{color:#a86691}
+.testimonial-card{background:linear-gradient(145deg,#fdfbff,#f1e8f7);border-color:#e1d4eb}.stars{color:#9a72b8}.avatar{background:linear-gradient(135deg,#8766aa,#b96b91)}
+.cta-section{background:linear-gradient(135deg,#e4d6ef,#d5c1e6 75%,#ead1df);color:#493a5b;border-color:#d9c8e7}.cta-inner h2{color:#493a5b}.cta-inner p{color:#665474}.cta-inner .section-kicker{color:#8061a5}
+.site-footer{background:linear-gradient(135deg,#f3ecf8,#e5d8ef);color:#493a5b;border-color:#d9cce5}.footer-brand{color:#493a5b}.footer-grid p,.footer-grid>div>span,.footer-grid>div>a{color:#685975}.footer-grid h4,.footer-grid svg{color:#8061a5}.footer-grid>div>a:hover{color:#a85f87}.footer-bottom{border-top-color:#d8cbe3;color:#796c84}
+.video-frame{background:linear-gradient(135deg,#d8c5e8,#eadbe9)}.video-screen{background:#ece1f4}
+.floating-whatsapp{box-shadow:0 12px 28px rgba(112,82,145,.24)}.floating-whatsapp img{filter:hue-rotate(188deg) saturate(.72)}
